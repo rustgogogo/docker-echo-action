@@ -1,0 +1,15 @@
+name: 'echo'
+description: 'Echo someone and record the time'
+inputs:
+  echo-what:  # 输入 id
+    description: 'What to echo'
+    required: true
+    default: 'hello'
+outputs:
+  time: # 输出 id
+    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.echo-what }}
